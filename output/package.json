@@ -1,0 +1,27 @@
+{
+  "name": "dota-lua-declarations",
+  "version": "0.1.0",
+  "description": "Lua Language Server annotations for the Dota 2 Bot Scripting API and VScripts API",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novamxd/dota-LuaDeclarations"
+  },
+  "homepage": "https://github.com/novamxd/dota-LuaDeclarations",
+  "keywords": [
+    "dota2",
+    "dota",
+    "lua",
+    "bot",
+    "scripting",
+    "api",
+    "declarations",
+    "language-server",
+    "lua-ls",
+    "vscripts"
+  ],
+  "files": [
+    "dota-api.lua"
+  ],
+  "main": "dota-api.lua"
+}

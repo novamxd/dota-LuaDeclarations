@@ -1,0 +1,28 @@
+{
+  "name": "dota-lua-declarations-build",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "build": "npm run clean && ts-node --project build/tsconfig.json build/index.ts",
+    "lint": "eslint . && prettier --check build",
+    "lint:fix": "eslint . --fix && prettier --write build",
+    "version:bump": "node scripts/version-bump.js",
+    "publish:npm": "npm run build && cd output && npm publish --access public"
+  },
+  "devDependencies": {
+    "@moddota/dota-data": "^0.47.1",
+    "@types/fs-extra": "^9.0.4",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^20.14.8",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "fs-extra": "^9.0.1",
+    "lodash": "^4.17.20",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.5.2"
+  }
+}

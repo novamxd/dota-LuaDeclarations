@@ -1,0 +1,1586 @@
+{
+  "enums": [
+    {
+      "name": "BotMode",
+      "description": "Bot mode constants used to identify the current or desired mode of a bot.",
+      "members": [
+        { "name": "BOT_MODE_NONE", "value": 0 },
+        { "name": "BOT_MODE_LANING", "value": 1 },
+        { "name": "BOT_MODE_ATTACK", "value": 2 },
+        { "name": "BOT_MODE_ROAM", "value": 3 },
+        { "name": "BOT_MODE_RETREAT", "value": 4 },
+        { "name": "BOT_MODE_SECRET_SHOP", "value": 5 },
+        { "name": "BOT_MODE_SIDE_SHOP", "value": 6 },
+        { "name": "BOT_MODE_PUSH_TOWER_TOP", "value": 7 },
+        { "name": "BOT_MODE_PUSH_TOWER_MID", "value": 8 },
+        { "name": "BOT_MODE_PUSH_TOWER_BOT", "value": 9 },
+        { "name": "BOT_MODE_DEFEND_TOWER_TOP", "value": 10 },
+        { "name": "BOT_MODE_DEFEND_TOWER_MID", "value": 11 },
+        { "name": "BOT_MODE_DEFEND_TOWER_BOT", "value": 12 },
+        { "name": "BOT_MODE_ASSEMBLE", "value": 13 },
+        { "name": "BOT_MODE_TEAM_ROAM", "value": 14 },
+        { "name": "BOT_MODE_FARM", "value": 15 },
+        { "name": "BOT_MODE_DEFEND_ALLY", "value": 16 },
+        { "name": "BOT_MODE_EVASIVE_MANEUVERS", "value": 17 },
+        { "name": "BOT_MODE_ROSHAN", "value": 18 },
+        { "name": "BOT_MODE_ITEM", "value": 19 },
+        { "name": "BOT_MODE_WARD", "value": 20 }
+      ]
+    },
+    {
+      "name": "BotActionDesire",
+      "description": "Desire constants for bot actions.",
+      "members": [
+        { "name": "BOT_ACTION_DESIRE_NONE", "value": 0.0 },
+        { "name": "BOT_ACTION_DESIRE_VERYLOW", "value": 0.1 },
+        { "name": "BOT_ACTION_DESIRE_LOW", "value": 0.25 },
+        { "name": "BOT_ACTION_DESIRE_MODERATE", "value": 0.5 },
+        { "name": "BOT_ACTION_DESIRE_HIGH", "value": 0.75 },
+        { "name": "BOT_ACTION_DESIRE_VERYHIGH", "value": 0.9 },
+        { "name": "BOT_ACTION_DESIRE_ABSOLUTE", "value": 1.0 }
+      ]
+    },
+    {
+      "name": "BotModeDesire",
+      "description": "Desire constants for bot modes.",
+      "members": [
+        { "name": "BOT_MODE_DESIRE_NONE", "value": 0 },
+        { "name": "BOT_MODE_DESIRE_VERYLOW", "value": 0.1 },
+        { "name": "BOT_MODE_DESIRE_LOW", "value": 0.25 },
+        { "name": "BOT_MODE_DESIRE_MODERATE", "value": 0.5 },
+        { "name": "BOT_MODE_DESIRE_HIGH", "value": 0.75 },
+        { "name": "BOT_MODE_DESIRE_VERYHIGH", "value": 0.9 },
+        { "name": "BOT_MODE_DESIRE_ABSOLUTE", "value": 1.0 }
+      ]
+    },
+    {
+      "name": "BotDamageType",
+      "description": "Damage type constants.",
+      "members": [
+        { "name": "DAMAGE_TYPE_PHYSICAL", "value": 0 },
+        { "name": "DAMAGE_TYPE_MAGICAL", "value": 1 },
+        { "name": "DAMAGE_TYPE_PURE", "value": 2 },
+        { "name": "DAMAGE_TYPE_ALL", "value": 3 }
+      ]
+    },
+    {
+      "name": "BotUnitType",
+      "description": "Unit list type constants used to filter nearby unit queries.",
+      "members": [
+        { "name": "UNIT_LIST_ALL", "value": 0 },
+        { "name": "UNIT_LIST_ALLIES", "value": 1 },
+        { "name": "UNIT_LIST_ALLIED_HEROES", "value": 2 },
+        { "name": "UNIT_LIST_ALLIED_CREEPS", "value": 3 },
+        { "name": "UNIT_LIST_ALLIED_WARDS", "value": 4 },
+        { "name": "UNIT_LIST_ALLIED_BUILDINGS", "value": 5 },
+        { "name": "UNIT_LIST_ENEMIES", "value": 6 },
+        { "name": "UNIT_LIST_ENEMY_HEROES", "value": 7 },
+        { "name": "UNIT_LIST_ENEMY_CREEPS", "value": 8 },
+        { "name": "UNIT_LIST_ENEMY_WARDS", "value": 9 },
+        { "name": "UNIT_LIST_NEUTRAL_CREEPS", "value": 10 },
+        { "name": "UNIT_LIST_ENEMY_BUILDINGS", "value": 11 }
+      ]
+    },
+    {
+      "name": "BotDifficulty",
+      "description": "Bot difficulty level constants.",
+      "members": [
+        { "name": "DIFFICULTY_INVALID", "value": 0 },
+        { "name": "DIFFICULTY_PASSIVE", "value": 1 },
+        { "name": "DIFFICULTY_EASY", "value": 2 },
+        { "name": "DIFFICULTY_MEDIUM", "value": 3 },
+        { "name": "DIFFICULTY_HARD", "value": 4 },
+        { "name": "DIFFICULTY_UNFAIR", "value": 5 }
+      ]
+    },
+    {
+      "name": "BotAttribute",
+      "description": "Hero attribute type constants.",
+      "members": [
+        { "name": "ATTRIBUTE_INVALID", "value": 0 },
+        { "name": "ATTRIBUTE_STRENGTH", "value": 1 },
+        { "name": "ATTRIBUTE_AGILITY", "value": 2 },
+        { "name": "ATTRIBUTE_INTELLECT", "value": 3 }
+      ]
+    },
+    {
+      "name": "BotItemPurchaseResult",
+      "description": "Result codes returned by item purchase actions.",
+      "members": [
+        { "name": "PURCHASE_ITEM_SUCCESS", "value": 0 },
+        { "name": "PURCHASE_ITEM_OUT_OF_STOCK", "value": 1 },
+        { "name": "PURCHASE_ITEM_DISALLOWED_ITEM", "value": 2 },
+        { "name": "PURCHASE_ITEM_INSUFFICIENT_GOLD", "value": 3 },
+        { "name": "PURCHASE_ITEM_NOT_AT_HOME_SHOP", "value": 4 },
+        { "name": "PURCHASE_ITEM_NOT_AT_SIDE_SHOP", "value": 5 },
+        { "name": "PURCHASE_ITEM_NOT_AT_SECRET_SHOP", "value": 6 },
+        { "name": "PURCHASE_ITEM_INVALID_ITEM_NAME", "value": 7 }
+      ]
+    },
+    {
+      "name": "BotGameMode",
+      "description": "Game mode constants.",
+      "members": [
+        { "name": "GAMEMODE_NONE", "value": 0 },
+        { "name": "GAMEMODE_AP", "value": 1 },
+        { "name": "GAMEMODE_CM", "value": 2 },
+        { "name": "GAMEMODE_RD", "value": 3 },
+        { "name": "GAMEMODE_SD", "value": 4 },
+        { "name": "GAMEMODE_AR", "value": 5 },
+        { "name": "GAMEMODE_REVERSE_CM", "value": 6 },
+        { "name": "GAMEMODE_MO", "value": 7 },
+        { "name": "GAMEMODE_CD", "value": 8 },
+        { "name": "GAMEMODE_ABILITY_DRAFT", "value": 9 },
+        { "name": "GAMEMODE_ARDM", "value": 10 },
+        { "name": "GAMEMODE_1V1MID", "value": 11 },
+        { "name": "GAMEMODE_ALL_DRAFT", "value": 12 }
+      ]
+    },
+    {
+      "name": "BotTeam",
+      "description": "Team constants.",
+      "members": [
+        { "name": "TEAM_RADIANT", "value": 2 },
+        { "name": "TEAM_DIRE", "value": 3 },
+        { "name": "TEAM_NEUTRAL", "value": 4 },
+        { "name": "TEAM_NONE", "value": 5 }
+      ]
+    },
+    {
+      "name": "BotLane",
+      "description": "Lane constants.",
+      "members": [
+        { "name": "LANE_NONE", "value": 0 },
+        { "name": "LANE_TOP", "value": 1 },
+        { "name": "LANE_MID", "value": 2 },
+        { "name": "LANE_BOT", "value": 3 }
+      ]
+    },
+    {
+      "name": "BotGameState",
+      "description": "Game state constants.",
+      "members": [
+        { "name": "GAME_STATE_INIT", "value": 0 },
+        { "name": "GAME_STATE_WAIT_FOR_PLAYERS_TO_LOAD", "value": 1 },
+        { "name": "GAME_STATE_HERO_SELECTION", "value": 2 },
+        { "name": "GAME_STATE_STRATEGY_TIME", "value": 3 },
+        { "name": "GAME_STATE_PRE_GAME", "value": 4 },
+        { "name": "GAME_STATE_GAME_IN_PROGRESS", "value": 5 },
+        { "name": "GAME_STATE_POST_GAME", "value": 6 },
+        { "name": "GAME_STATE_DISCONNECT", "value": 7 },
+        { "name": "GAME_STATE_TEAM_SHOWCASE", "value": 8 },
+        { "name": "GAME_STATE_CUSTOM_GAME_SETUP", "value": 9 },
+        { "name": "GAME_STATE_WAIT_FOR_MAP_TO_LOAD", "value": 10 },
+        { "name": "GAME_STATE_LAST", "value": 11 }
+      ]
+    },
+    {
+      "name": "BotHeroPickState",
+      "description": "Hero pick/ban phase state constants.",
+      "members": [
+        { "name": "HEROPICK_STATE_NONE", "value": 0 },
+        { "name": "HEROPICK_STATE_AP_SELECT", "value": 1 },
+        { "name": "HEROPICK_STATE_SD_SELECT", "value": 2 },
+        { "name": "HEROPICK_STATE_INTRO_SELECT_UNUSED", "value": 3 },
+        { "name": "HEROPICK_STATE_CUSTOMGAME_SELECT", "value": 4 },
+        { "name": "HEROPICK_STATE_CM_INTRO", "value": 5 },
+        { "name": "HEROPICK_STATE_CM_CAPTAINPICK", "value": 6 },
+        { "name": "HEROPICK_STATE_CM_BAN1", "value": 7 },
+        { "name": "HEROPICK_STATE_CM_BAN2", "value": 8 },
+        { "name": "HEROPICK_STATE_CM_BAN3", "value": 9 },
+        { "name": "HEROPICK_STATE_CM_BAN4", "value": 10 },
+        { "name": "HEROPICK_STATE_CM_BAN5", "value": 11 },
+        { "name": "HEROPICK_STATE_CM_BAN6", "value": 12 },
+        { "name": "HEROPICK_STATE_CM_SELECT1", "value": 13 },
+        { "name": "HEROPICK_STATE_CM_SELECT2", "value": 14 },
+        { "name": "HEROPICK_STATE_CM_SELECT3", "value": 15 },
+        { "name": "HEROPICK_STATE_CM_SELECT4", "value": 16 },
+        { "name": "HEROPICK_STATE_CM_SELECT5", "value": 17 },
+        { "name": "HEROPICK_STATE_CM_PICK", "value": 18 },
+        { "name": "HEROPICK_STATE_AR_SELECT", "value": 19 },
+        { "name": "HEROPICK_STATE_MO_SELECT", "value": 20 },
+        { "name": "HEROPICK_STATE_FH_SELECT", "value": 21 },
+        { "name": "HEROPICK_STATE_CD_INTRO", "value": 22 },
+        { "name": "HEROPICK_STATE_CD_CAPTAINPICK", "value": 23 },
+        { "name": "HEROPICK_STATE_CD_BAN1", "value": 24 },
+        { "name": "HEROPICK_STATE_CD_BAN2", "value": 25 },
+        { "name": "HEROPICK_STATE_CD_BAN3", "value": 26 },
+        { "name": "HEROPICK_STATE_CD_SELECT1", "value": 27 },
+        { "name": "HEROPICK_STATE_CD_SELECT2", "value": 28 },
+        { "name": "HEROPICK_STATE_CD_SELECT3", "value": 29 },
+        { "name": "HEROPICK_STATE_CD_PICK", "value": 30 },
+        { "name": "HEROPICK_STATE_BD_SELECT", "value": 31 },
+        { "name": "HERO_PICK_STATE_ABILITY_DRAFT_SELECT", "value": 32 },
+        { "name": "HERO_PICK_STATE_ARDM_SELECT", "value": 33 },
+        { "name": "HEROPICK_STATE_ALL_DRAFT_INTRO", "value": 34 },
+        { "name": "HEROPICK_STATE_ALL_DRAFT_PICK", "value": 35 },
+        { "name": "HEROPICK_STATE_TEAMSHOWCASE", "value": 36 },
+        { "name": "HEROPICK_STATE_CUSTOM_PICK_RULES", "value": 37 },
+        { "name": "HEROPICK_STATE_COUNT", "value": 38 }
+      ]
+    },
+    {
+      "name": "BotRuneType",
+      "description": "Rune type constants.",
+      "members": [
+        { "name": "RUNE_INVALID", "value": -1 },
+        { "name": "RUNE_DOUBLEDAMAGE", "value": 0 },
+        { "name": "RUNE_HASTE", "value": 1 },
+        { "name": "RUNE_ILLUSION", "value": 2 },
+        { "name": "RUNE_INVISIBILITY", "value": 3 },
+        { "name": "RUNE_REGENERATION", "value": 4 },
+        { "name": "RUNE_BOUNTY", "value": 5 },
+        { "name": "RUNE_ARCANE", "value": 6 }
+      ]
+    },
+    {
+      "name": "BotRuneStatus",
+      "description": "Rune status constants.",
+      "members": [
+        { "name": "RUNE_STATUS_UNKNOWN", "value": 0 },
+        { "name": "RUNE_STATUS_AVAILABLE", "value": 1 },
+        { "name": "RUNE_STATUS_MISSING", "value": 2 }
+      ]
+    },
+    {
+      "name": "BotRuneLocation",
+      "description": "Rune spawn location index constants.",
+      "members": [
+        { "name": "RUNE_POWERUP_1", "value": 0 },
+        { "name": "RUNE_POWERUP_2", "value": 1 },
+        { "name": "RUNE_BOUNTY_1", "value": 2 },
+        { "name": "RUNE_BOUNTY_2", "value": 3 },
+        { "name": "RUNE_BOUNTY_3", "value": 4 },
+        { "name": "RUNE_BOUNTY_4", "value": 5 }
+      ]
+    },
+    {
+      "name": "BotItemSlotType",
+      "description": "Item slot type constants.",
+      "members": [
+        { "name": "ITEM_SLOT_TYPE_INVALID", "value": 0 },
+        { "name": "ITEM_SLOT_TYPE_MAIN", "value": 1 },
+        { "name": "ITEM_SLOT_TYPE_BACKPACK", "value": 2 },
+        { "name": "ITEM_SLOT_TYPE_STASH", "value": 3 }
+      ]
+    },
+    {
+      "name": "BotActionType",
+      "description": "Bot action type constants returned by GetCurrentActionType.",
+      "members": [
+        { "name": "BOT_ACTION_TYPE_NONE", "value": 0 },
+        { "name": "BOT_ACTION_TYPE_IDLE", "value": 1 },
+        { "name": "BOT_ACTION_TYPE_MOVE_TO", "value": 2 },
+        { "name": "BOT_ACTION_TYPE_MOVE_TO_DIRECTLY", "value": 3 },
+        { "name": "BOT_ACTION_TYPE_ATTACK", "value": 4 },
+        { "name": "BOT_ACTION_TYPE_ATTACKMOVE", "value": 5 },
+        { "name": "BOT_ACTION_TYPE_USE_ABILITY", "value": 6 },
+        { "name": "BOT_ACTION_TYPE_PICK_UP_RUNE", "value": 7 },
+        { "name": "BOT_ACTION_TYPE_PICK_UP_ITEM", "value": 8 },
+        { "name": "BOT_ACTION_TYPE_DROP_ITEM", "value": 9 },
+        { "name": "BOT_ACTION_TYPE_SHRINE", "value": 10 },
+        { "name": "BOT_ACTION_TYPE_DELAY", "value": 11 }
+      ]
+    },
+    {
+      "name": "BotCourierAction",
+      "description": "Courier action constants.",
+      "members": [
+        { "name": "COURIER_ACTION_BURST", "value": 0 },
+        { "name": "COURIER_ACTION_ENEMY_SECRET_SHOP", "value": 1 },
+        { "name": "COURIER_ACTION_RETURN", "value": 2 },
+        { "name": "COURIER_ACTION_SECRET_SHOP", "value": 3 },
+        { "name": "COURIER_ACTION_SIDE_SHOP", "value": 4 },
+        { "name": "COURIER_ACTION_SIDE_SHOP2", "value": 5 },
+        { "name": "COURIER_ACTION_TAKE_STASH_ITEMS", "value": 6 },
+        { "name": "COURIER_ACTION_TAKE_AND_TRANSFER_ITEMS", "value": 7 },
+        { "name": "COURIER_ACTION_TRANSFER_ITEMS", "value": 8 }
+      ]
+    },
+    {
+      "name": "BotCourierState",
+      "description": "Courier state constants.",
+      "members": [
+        { "name": "COURIER_STATE_IDLE", "value": 0 },
+        { "name": "COURIER_STATE_AT_BASE", "value": 1 },
+        { "name": "COURIER_STATE_MOVING", "value": 2 },
+        { "name": "COURIER_STATE_DELIVERING_ITEMS", "value": 3 },
+        { "name": "COURIER_STATE_RETURNING_TO_BASE", "value": 4 },
+        { "name": "COURIER_STATE_DEAD", "value": 5 }
+      ]
+    },
+    {
+      "name": "BotTower",
+      "description": "Tower index constants.",
+      "members": [
+        { "name": "TOWER_TOP_1", "value": 0 },
+        { "name": "TOWER_TOP_2", "value": 1 },
+        { "name": "TOWER_TOP_3", "value": 2 },
+        { "name": "TOWER_MID_1", "value": 3 },
+        { "name": "TOWER_MID_2", "value": 4 },
+        { "name": "TOWER_MID_3", "value": 5 },
+        { "name": "TOWER_BOT_1", "value": 6 },
+        { "name": "TOWER_BOT_2", "value": 7 },
+        { "name": "TOWER_BOT_3", "value": 8 },
+        { "name": "TOWER_BASE_1", "value": 9 },
+        { "name": "TOWER_BASE_2", "value": 10 }
+      ]
+    },
+    {
+      "name": "BotBarracks",
+      "description": "Barracks index constants.",
+      "members": [
+        { "name": "BARRACKS_TOP_MELEE", "value": 0 },
+        { "name": "BARRACKS_TOP_RANGED", "value": 1 },
+        { "name": "BARRACKS_MID_MELEE", "value": 2 },
+        { "name": "BARRACKS_MID_RANGED", "value": 3 },
+        { "name": "BARRACKS_BOT_MELEE", "value": 4 },
+        { "name": "BARRACKS_BOT_RANGED", "value": 5 }
+      ]
+    },
+    {
+      "name": "BotShrine",
+      "description": "Shrine index constants.",
+      "members": [
+        { "name": "SHRINE_BASE_1", "value": 0 },
+        { "name": "SHRINE_BASE_2", "value": 1 },
+        { "name": "SHRINE_BASE_3", "value": 2 },
+        { "name": "SHRINE_BASE_4", "value": 3 },
+        { "name": "SHRINE_BASE_5", "value": 4 },
+        { "name": "SHRINE_JUNGLE_1", "value": 5 },
+        { "name": "SHRINE_JUNGLE_2", "value": 6 }
+      ]
+    },
+    {
+      "name": "BotShop",
+      "description": "Shop type constants.",
+      "members": [
+        { "name": "SHOP_HOME", "value": 0 },
+        { "name": "SHOP_SIDE", "value": 1 },
+        { "name": "SHOP_SECRET", "value": 2 },
+        { "name": "SHOP_SIDE2", "value": 3 },
+        { "name": "SHOP_SECRET2", "value": 4 }
+      ]
+    },
+    {
+      "name": "BotAbilityTargetTeam",
+      "description": "Ability target team constants.",
+      "members": [
+        { "name": "ABILITY_TARGET_TEAM_NONE", "value": 0 },
+        { "name": "ABILITY_TARGET_TEAM_FRIENDLY", "value": 1 },
+        { "name": "ABILITY_TARGET_TEAM_ENEMY", "value": 2 }
+      ]
+    },
+    {
+      "name": "BotAbilityTargetType",
+      "description": "Ability target type constants.",
+      "members": [
+        { "name": "ABILITY_TARGET_TYPE_NONE", "value": 0 },
+        { "name": "ABILITY_TARGET_TYPE_UNIT", "value": 1 },
+        { "name": "ABILITY_TARGET_TYPE_POINT", "value": 2 },
+        { "name": "ABILITY_TARGET_TYPE_UNIT_OR_POINT", "value": 3 },
+        { "name": "ABILITY_TARGET_TYPE_ALL", "value": 4 }
+      ]
+    },
+    {
+      "name": "BotAbilityTargetFlag",
+      "description": "Ability target flag bitfield constants.",
+      "members": [
+        { "name": "ABILITY_TARGET_FLAG_NONE", "value": 0 },
+        { "name": "ABILITY_TARGET_FLAG_RANGED_ONLY", "value": 1 },
+        { "name": "ABILITY_TARGET_FLAG_MELEE_ONLY", "value": 2 },
+        { "name": "ABILITY_TARGET_FLAG_DEAD", "value": 4 },
+        { "name": "ABILITY_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES", "value": 8 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES", "value": 16 },
+        { "name": "ABILITY_TARGET_FLAG_INVULNERABLE", "value": 32 },
+        { "name": "ABILITY_TARGET_FLAG_FOW_VISIBLE", "value": 64 },
+        { "name": "ABILITY_TARGET_FLAG_NO_INVIS", "value": 128 },
+        { "name": "ABILITY_TARGET_FLAG_PLAYER_CONTROLLED", "value": 256 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_DOMINATED", "value": 512 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_SUMMONED", "value": 1024 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_ILLUSIONS", "value": 2048 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_ATTACK_IMMUNE", "value": 4096 },
+        { "name": "ABILITY_TARGET_FLAG_MANA_ONLY", "value": 8192 },
+        { "name": "ABILITY_TARGET_FLAG_CHECK_DISABLE_HELP", "value": 16384 },
+        { "name": "ABILITY_TARGET_FLAG_NOT_CREEP_HERO", "value": 32768 },
+        { "name": "ABILITY_TARGET_FLAG_OUT_OF_WORLD", "value": 65536 },
+        { "name": "ABILITY_TARGET_FLAG_SUMMONED", "value": 131072 },
+        { "name": "ABILITY_TARGET_FLAG_ILLUSIONS", "value": 262144 },
+        { "name": "ABILITY_TARGET_FLAG_DOMINATED", "value": 524288 }
+      ]
+    },
+    {
+      "name": "BotAbilityBehavior",
+      "description": "Ability behavior bitfield constants.",
+      "members": [
+        { "name": "ABILITY_BEHAVIOR_NONE", "value": 0 },
+        { "name": "ABILITY_BEHAVIOR_HIDDEN", "value": 1 },
+        { "name": "ABILITY_BEHAVIOR_PASSIVE", "value": 2 },
+        { "name": "ABILITY_BEHAVIOR_NO_TARGET", "value": 4 },
+        { "name": "ABILITY_BEHAVIOR_UNIT_TARGET", "value": 8 },
+        { "name": "ABILITY_BEHAVIOR_POINT", "value": 16 },
+        { "name": "ABILITY_BEHAVIOR_AOE", "value": 32 },
+        { "name": "ABILITY_BEHAVIOR_NOT_LEARNABLE", "value": 64 },
+        { "name": "ABILITY_BEHAVIOR_CHANNELLED", "value": 128 },
+        { "name": "ABILITY_BEHAVIOR_ITEM", "value": 256 },
+        { "name": "ABILITY_BEHAVIOR_TOGGLE", "value": 512 },
+        { "name": "ABILITY_BEHAVIOR_DIRECTIONAL", "value": 1024 },
+        { "name": "ABILITY_BEHAVIOR_IMMEDIATE", "value": 2048 },
+        { "name": "ABILITY_BEHAVIOR_AUTOCAST", "value": 4096 },
+        { "name": "ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET", "value": 8192 },
+        { "name": "ABILITY_BEHAVIOR_OPTIONAL_POINT", "value": 16384 },
+        { "name": "ABILITY_BEHAVIOR_OPTIONAL_NO_TARGET", "value": 32768 },
+        { "name": "ABILITY_BEHAVIOR_AURA", "value": 65536 },
+        { "name": "ABILITY_BEHAVIOR_ATTACK", "value": 131072 },
+        { "name": "ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT", "value": 262144 },
+        { "name": "ABILITY_BEHAVIOR_ROOT_DISABLES", "value": 524288 },
+        { "name": "ABILITY_BEHAVIOR_UNRESTRICTED", "value": 1048576 },
+        { "name": "ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE", "value": 2097152 },
+        { "name": "ABILITY_BEHAVIOR_IGNORE_CHANNEL", "value": 4194304 },
+        { "name": "ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT", "value": 8388608 },
+        { "name": "ABILITY_BEHAVIOR_DONT_ALERT_TARGET", "value": 16777216 },
+        { "name": "ABILITY_BEHAVIOR_DONT_RESUME_ATTACK", "value": 33554432 },
+        { "name": "ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN", "value": 67108864 },
+        { "name": "ABILITY_BEHAVIOR_IGNORE_BACKSWING", "value": 134217728 },
+        { "name": "ABILITY_BEHAVIOR_RUNE_TARGET", "value": 268435456 },
+        { "name": "ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL", "value": 536870912 }
+      ]
+    },
+    {
+      "name": "AnimationActivity",
+      "description": "Animation activity constants returned by GetAnimActivity().",
+      "members": [
+        { "name": "ACTIVITY_IDLE", "value": 1500 },
+        { "name": "ACTIVITY_IDLE_RARE", "value": 1501 },
+        { "name": "ACTIVITY_RUN", "value": 1502 },
+        { "name": "ACTIVITY_ATTACK", "value": 1503 },
+        { "name": "ACTIVITY_ATTACK2", "value": 1504 },
+        { "name": "ACTIVITY_ATTACK_EVENT", "value": 1505 },
+        { "name": "ACTIVITY_DIE", "value": 1506 },
+        { "name": "ACTIVITY_FLINCH", "value": 1507 },
+        { "name": "ACTIVITY_FLAIL", "value": 1508 },
+        { "name": "ACTIVITY_DISABLED", "value": 1509 },
+        { "name": "ACTIVITY_CAST_ABILITY_1", "value": 1510 },
+        { "name": "ACTIVITY_CAST_ABILITY_2", "value": 1511 },
+        { "name": "ACTIVITY_CAST_ABILITY_3", "value": 1512 },
+        { "name": "ACTIVITY_CAST_ABILITY_4", "value": 1513 },
+        { "name": "ACTIVITY_CAST_ABILITY_5", "value": 1514 },
+        { "name": "ACTIVITY_CAST_ABILITY_6", "value": 1515 },
+        { "name": "ACTIVITY_OVERRIDE_ABILITY_1", "value": 1516 },
+        { "name": "ACTIVITY_OVERRIDE_ABILITY_2", "value": 1517 },
+        { "name": "ACTIVITY_OVERRIDE_ABILITY_3", "value": 1518 },
+        { "name": "ACTIVITY_OVERRIDE_ABILITY_4", "value": 1519 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_1", "value": 1520 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_2", "value": 1521 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_3", "value": 1522 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_4", "value": 1523 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_5", "value": 1524 },
+        { "name": "ACTIVITY_CHANNEL_ABILITY_6", "value": 1525 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_1", "value": 1526 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_2", "value": 1527 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_3", "value": 1528 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_4", "value": 1529 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_5", "value": 1530 },
+        { "name": "ACTIVITY_CHANNEL_END_ABILITY_6", "value": 1531 },
+        { "name": "ACTIVITY_CONSTANT_LAYER", "value": 1532 },
+        { "name": "ACTIVITY_CAPTURE", "value": 1533 },
+        { "name": "ACTIVITY_SPAWN", "value": 1534 },
+        { "name": "ACTIVITY_KILLTAUNT", "value": 1535 },
+        { "name": "ACTIVITY_TAUNT", "value": 1536 }
+      ]
+    },
+    {
+      "name": "MiscConstants",
+      "description": "Miscellaneous bot scripting constants.",
+      "members": [
+        { "name": "GLYPH_COOLDOWN", "value": 300 }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "name": "BotsModeModule",
+      "description": "Represents a bot mode or ability/item-usage module returned by `BotsInit.CreateGeneric()`.\nAssign the lifecycle callbacks on this table to implement your mode logic.\nAll fields are optional: any that are left `nil` are silently skipped by the engine.\n\nTypical usage inside a `mode_*_generic.lua` file:\n\n  BotsInit = require(\"game/botsinit\")\n  local X = BotsInit.CreateGeneric()\n\n  function X.GetDesire() return 0.5 end\n  function X.OnStart() end\n  function X.OnEnd()   end\n  function X.Think()   end\n\n  return X",
+      "fields": [
+        {
+          "name": "GetDesire",
+          "type": "(fun(): number)?",
+          "description": "Called every ~300 ms. Must return a float in [0, 1] that represents how much this mode wants to become (or remain) the active mode."
+        },
+        {
+          "name": "OnStart",
+          "type": "(fun())?",
+          "description": "Called once when this mode becomes the active mode."
+        },
+        {
+          "name": "OnEnd",
+          "type": "(fun())?",
+          "description": "Called once when this mode relinquishes control to another mode."
+        },
+        {
+          "name": "Think",
+          "type": "(fun())?",
+          "description": "Called every frame while this mode is active. Responsible for issuing all action-level commands."
+        }
+      ]
+    },
+    {
+      "name": "BotsInit",
+      "description": "Utility table that creates generic bot mode / ability-usage modules.\nObtain it at the top of any generic override file with:\n\n  BotsInit = require(\"game/botsinit\")\n\nSee *Appendix A – Chaining to a generic implementation in Lua* in the\nValve Dota Bot Scripting documentation for the full workflow.",
+      "methods": [
+        {
+          "name": "CreateGeneric",
+          "description": "Creates a new `BotsModeModule` table and, as a side-effect, redirects the **calling script's** global environment to that table via `setfenv`.\nThis means that top-level function declarations written *after* this call —\ne.g. `function GetDesire() … end` — automatically become members of the returned\ntable (`X.GetDesire`) without needing an explicit `X.` prefix.\n\nCall this once, near the top of your generic mode file, before defining any\nof the lifecycle functions.",
+          "args": [],
+          "returns": ["BotsModeModule"],
+          "returnDescription": "The module table that must be `return`-ed at the end of the file.",
+          "static": true
+        }
+      ]
+    },
+    {
+      "name": "CDOTA_Bot",
+      "extends": "CDOTA_BaseNPC",
+      "description": "Handle to the controllable bot unit returned by GetBot()."
+    }
+  ],
+  "globalFunctions": [
+    {
+      "name": "GetBot",
+      "description": "Returns a handle to the bot on which the script is currently being run.",
+      "args": [],
+      "returns": ["CDOTA_Bot"]
+    },
+    {
+      "name": "GetTeam",
+      "description": "Returns the team of the bot.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetTeamPlayers",
+      "description": "Returns a table of player IDs for the given team.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] }
+      ],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetTeamMember",
+      "description": "Returns the bot unit for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["CDOTA_Bot"]
+    },
+    {
+      "name": "IsTeamPlayer",
+      "description": "Returns whether the given player ID is on the bot's team.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsPlayerBot",
+      "description": "Returns whether the given player ID is a bot.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetTeamForPlayer",
+      "description": "Returns the team for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetUnitList",
+      "description": "Returns a table of units matching the given unit list type.",
+      "args": [
+        { "name": "nUnitType", "types": ["int"] }
+      ],
+      "returns": ["table"]
+    },
+    {
+      "name": "DotaTime",
+      "description": "Returns the current Dota game time in seconds.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GameTime",
+      "description": "Returns the current game time in seconds.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "RealTime",
+      "description": "Returns the real wall-clock time in seconds.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetUnitToUnitDistance",
+      "description": "Returns the distance between two units.",
+      "args": [
+        { "name": "hUnit1", "types": ["CDOTA_BaseNPC"] },
+        { "name": "hUnit2", "types": ["CDOTA_BaseNPC"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetUnitToUnitDistanceSqr",
+      "description": "Returns the squared distance between two units.",
+      "args": [
+        { "name": "hUnit1", "types": ["CDOTA_BaseNPC"] },
+        { "name": "hUnit2", "types": ["CDOTA_BaseNPC"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetUnitToLocationDistance",
+      "description": "Returns the distance from a unit to a location.",
+      "args": [
+        { "name": "hUnit", "types": ["CDOTA_BaseNPC"] },
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetUnitToLocationDistanceSqr",
+      "description": "Returns the squared distance from a unit to a location.",
+      "args": [
+        { "name": "hUnit", "types": ["CDOTA_BaseNPC"] },
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "PointToLineDistance",
+      "description": "Returns the distance from a point to a line defined by two points.",
+      "args": [
+        { "name": "vPoint", "types": ["Vector"] },
+        { "name": "vLineStart", "types": ["Vector"] },
+        { "name": "vLineEnd", "types": ["Vector"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetWorldBounds",
+      "description": "Returns the world bounds as two vectors (min, max).",
+      "args": [],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "IsLocationPassable",
+      "description": "Returns whether the given location is passable.",
+      "args": [
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsRadiusVisible",
+      "description": "Returns whether any part of the given radius around a location is visible.",
+      "args": [
+        { "name": "vLocation", "types": ["Vector"] },
+        { "name": "flRadius", "types": ["float"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsLocationVisible",
+      "description": "Returns whether the given location is visible.",
+      "args": [
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetHeightLevel",
+      "description": "Returns the height level at the given location.",
+      "args": [
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetNeutralSpawners",
+      "description": "Returns a table of neutral creep spawner locations.",
+      "args": [],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetItemCost",
+      "description": "Returns the gold cost of the given item.",
+      "args": [
+        { "name": "sItemName", "types": ["string"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "IsItemPurchasedFromSecretShop",
+      "description": "Returns whether the given item is purchased from the secret shop.",
+      "args": [
+        { "name": "sItemName", "types": ["string"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsItemPurchasedFromSideShop",
+      "description": "Returns whether the given item is purchased from the side shop.",
+      "args": [
+        { "name": "sItemName", "types": ["string"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetItemStockCount",
+      "description": "Returns the current stock count of the given item.",
+      "args": [
+        { "name": "sItemName", "types": ["string"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetDroppedItemList",
+      "description": "Returns a table of dropped items on the ground.",
+      "args": [],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetPushLaneDesire",
+      "description": "Returns the desire to push the given lane.",
+      "args": [
+        { "name": "nLane", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetDefendLaneDesire",
+      "description": "Returns the desire to defend the given lane.",
+      "args": [
+        { "name": "nLane", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetFarmLaneDesire",
+      "description": "Returns the desire to farm the given lane.",
+      "args": [
+        { "name": "nLane", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetRoamDesire",
+      "description": "Returns the desire to roam.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetRoamTarget",
+      "description": "Returns the target unit for roaming.",
+      "args": [],
+      "returns": ["CDOTA_BaseNPC"]
+    },
+    {
+      "name": "GetRoshanDesire",
+      "description": "Returns the desire to kill Roshan.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetGameState",
+      "description": "Returns the current game state.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetGameStateTimeRemaining",
+      "description": "Returns the time remaining in the current game state.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetGameMode",
+      "description": "Returns the current game mode.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetHeroPickState",
+      "description": "Returns the current hero pick state.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "IsPlayerInHeroSelectionControl",
+      "description": "Returns whether the given player is in hero selection control.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "SelectHero",
+      "description": "Selects the given hero for the bot.",
+      "args": [
+        { "name": "sHeroName", "types": ["string"] }
+      ]
+    },
+    {
+      "name": "GetSelectedHeroName",
+      "description": "Returns the name of the hero selected by the given player.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["string"]
+    },
+    {
+      "name": "IsInCMBanPhase",
+      "description": "Returns whether the game is currently in a Captain's Mode ban phase.",
+      "args": [],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsInCMPickPhase",
+      "description": "Returns whether the game is currently in a Captain's Mode pick phase.",
+      "args": [],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetCMPhaseTimeRemaining",
+      "description": "Returns the time remaining in the current Captain's Mode phase.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetCMCaptain",
+      "description": "Returns the player ID of the Captain's Mode captain for the given team.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "SetCMCaptain",
+      "description": "Sets the Captain's Mode captain for the bot's team.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ]
+    },
+    {
+      "name": "IsCMBannedHero",
+      "description": "Returns whether the given hero is banned in Captain's Mode.",
+      "args": [
+        { "name": "sHeroName", "types": ["string"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "IsCMPickedHero",
+      "description": "Returns whether the given hero has been picked in Captain's Mode.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "sHeroName", "types": ["string"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "CMBanHero",
+      "description": "Bans the given hero in Captain's Mode.",
+      "args": [
+        { "name": "sHeroName", "types": ["string"] }
+      ]
+    },
+    {
+      "name": "CMPickHero",
+      "description": "Picks the given hero in Captain's Mode.",
+      "args": [
+        { "name": "sHeroName", "types": ["string"] }
+      ]
+    },
+    {
+      "name": "RandomInt",
+      "description": "Returns a random integer between nMin and nMax (inclusive).",
+      "args": [
+        { "name": "nMin", "types": ["int"] },
+        { "name": "nMax", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "RandomFloat",
+      "description": "Returns a random float between flMin and flMax.",
+      "args": [
+        { "name": "flMin", "types": ["float"] },
+        { "name": "flMax", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "RandomVector",
+      "description": "Returns a random unit vector.",
+      "args": [
+        { "name": "flLength", "types": ["float"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "RollPercentage",
+      "description": "Returns true with the given percentage chance.",
+      "args": [
+        { "name": "nPercent", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "Min",
+      "description": "Returns the minimum of two numbers.",
+      "args": [
+        { "name": "a", "types": ["float"] },
+        { "name": "b", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "Max",
+      "description": "Returns the maximum of two numbers.",
+      "args": [
+        { "name": "a", "types": ["float"] },
+        { "name": "b", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "Clamp",
+      "description": "Clamps a value between a minimum and maximum.",
+      "args": [
+        { "name": "flVal", "types": ["float"] },
+        { "name": "flMin", "types": ["float"] },
+        { "name": "flMax", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "RemapVal",
+      "description": "Remaps a value from one range to another.",
+      "args": [
+        { "name": "flVal", "types": ["float"] },
+        { "name": "flA", "types": ["float"] },
+        { "name": "flB", "types": ["float"] },
+        { "name": "flC", "types": ["float"] },
+        { "name": "flD", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "RemapValClamped",
+      "description": "Remaps a value from one range to another, clamped to the output range.",
+      "args": [
+        { "name": "flVal", "types": ["float"] },
+        { "name": "flA", "types": ["float"] },
+        { "name": "flB", "types": ["float"] },
+        { "name": "flC", "types": ["float"] },
+        { "name": "flD", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetUnitPotentialValue",
+      "description": "Returns the potential value of the given unit.",
+      "args": [
+        { "name": "hUnit", "types": ["CDOTA_BaseNPC"] },
+        { "name": "vLocation", "types": ["Vector"] },
+        { "name": "flRadius", "types": ["float"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "IsCourierAvailable",
+      "description": "Returns whether a courier is available for the bot's team.",
+      "args": [],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetNumCouriers",
+      "description": "Returns the number of couriers for the bot's team.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetCourier",
+      "description": "Returns the courier handle for the given courier index.",
+      "args": [
+        { "name": "nCourierIndex", "types": ["int"] }
+      ],
+      "returns": ["hCourier"]
+    },
+    {
+      "name": "GetCourierState",
+      "description": "Returns the state of the given courier.",
+      "args": [
+        { "name": "hCourier", "types": ["hCourier"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetTreeLocation",
+      "description": "Returns the location of the given tree.",
+      "args": [
+        { "name": "nTreeID", "types": ["int"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "GetRuneSpawnLocation",
+      "description": "Returns the spawn location of the given rune.",
+      "args": [
+        { "name": "nRune", "types": ["int"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "GetShopLocation",
+      "description": "Returns the location of the given shop.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nShop", "types": ["int"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "GetTimeOfDay",
+      "description": "Returns the current time of day as a float in [0, 1].",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetTower",
+      "description": "Returns the tower unit for the given team and tower index.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nTower", "types": ["int"] }
+      ],
+      "returns": ["CDOTA_BaseNPC"]
+    },
+    {
+      "name": "GetBarracks",
+      "description": "Returns the barracks unit for the given team and barracks index.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nBarracks", "types": ["int"] }
+      ],
+      "returns": ["CDOTA_BaseNPC"]
+    },
+    {
+      "name": "GetShrine",
+      "description": "Returns the shrine unit for the given team and shrine index.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nShrine", "types": ["int"] }
+      ],
+      "returns": ["CDOTA_BaseNPC"]
+    },
+    {
+      "name": "GetAncient",
+      "description": "Returns the ancient unit for the given team.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] }
+      ],
+      "returns": ["CDOTA_BaseNPC"]
+    },
+    {
+      "name": "GetGlyphCooldown",
+      "description": "Returns the remaining cooldown on the glyph for the given team.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetRoshanKillTime",
+      "description": "Returns the game time at which Roshan was last killed.",
+      "args": [],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetLaneFrontAmount",
+      "description": "Returns how far the front of the given lane has advanced, as a value in [0, 1].",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nLane", "types": ["int"] },
+        { "name": "bIncludeHeroes", "types": ["bool"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetLaneFrontLocation",
+      "description": "Returns the world location of the front of the given lane.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nLane", "types": ["int"] },
+        { "name": "flOffset", "types": ["float"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "GetLocationAlongLane",
+      "description": "Returns the world location at the given fraction along the given lane.",
+      "args": [
+        { "name": "nLane", "types": ["int"] },
+        { "name": "flFraction", "types": ["float"] }
+      ],
+      "returns": ["Vector"]
+    },
+    {
+      "name": "GetAmountAlongLane",
+      "description": "Returns the fraction along the given lane for the given location.",
+      "args": [
+        { "name": "nLane", "types": ["int"] },
+        { "name": "vLocation", "types": ["Vector"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetOpposingTeam",
+      "description": "Returns the team number of the opposing team.",
+      "args": [],
+      "returns": ["int"]
+    },
+    {
+      "name": "IsHeroAlive",
+      "description": "Returns whether the hero for the given player ID is alive.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "GetHeroLevel",
+      "description": "Returns the level of the hero for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetHeroKills",
+      "description": "Returns the kill count of the hero for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetHeroDeaths",
+      "description": "Returns the death count of the hero for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetHeroAssists",
+      "description": "Returns the assist count of the hero for the given player ID.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetHeroLastSeenInfo",
+      "description": "Returns a table with last-seen information for the given player's hero.",
+      "args": [
+        { "name": "nPlayerID", "types": ["int"] }
+      ],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetLinearProjectiles",
+      "description": "Returns a table of all active linear projectiles.",
+      "args": [],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetLinearProjectileByHandle",
+      "description": "Returns the linear projectile with the given handle.",
+      "args": [
+        { "name": "nHandle", "types": ["int"] }
+      ],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetAvoidanceZones",
+      "description": "Returns a table of all active avoidance zones.",
+      "args": [],
+      "returns": ["table"]
+    },
+    {
+      "name": "GetRuneType",
+      "description": "Returns the type of the rune at the given rune location index.",
+      "args": [
+        { "name": "nRune", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetRuneStatus",
+      "description": "Returns the status of the rune at the given rune location index.",
+      "args": [
+        { "name": "nRune", "types": ["int"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "GetRuneTimeSinceSeen",
+      "description": "Returns the time in seconds since the rune at the given location was last seen.",
+      "args": [
+        { "name": "nRune", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "GetShrineCooldown",
+      "description": "Returns the remaining cooldown on the given shrine.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nShrine", "types": ["int"] }
+      ],
+      "returns": ["float"]
+    },
+    {
+      "name": "IsShrineHealing",
+      "description": "Returns whether the given shrine is currently healing.",
+      "args": [
+        { "name": "nTeam", "types": ["int"] },
+        { "name": "nShrine", "types": ["int"] }
+      ],
+      "returns": ["bool"]
+    },
+    {
+      "name": "AddAvoidanceZone",
+      "description": "Adds an avoidance zone at the given location with the given radius.",
+      "args": [
+        { "name": "vLocation", "types": ["Vector"] },
+        { "name": "flRadius", "types": ["float"] }
+      ],
+      "returns": ["int"]
+    },
+    {
+      "name": "RemoveAvoidanceZone",
+      "description": "Removes the avoidance zone with the given handle.",
+      "args": [
+        { "name": "nHandle", "types": ["int"] }
+      ]
+    },
+    {
+      "name": "GeneratePath",
+      "description": "Generates a path from the start location to the end location, returning a table of waypoints.",
+      "args": [
+        { "name": "vStart", "types": ["Vector"] },
+        { "name": "vEnd", "types": ["Vector"] }
+      ],
+      "returns": ["table"]
+    },
+    {
+      "name": "DebugDrawLine",
+      "description": "Draws a debug line in the world.",
+      "args": [
+        { "name": "vStart", "types": ["Vector"] },
+        { "name": "vEnd", "types": ["Vector"] },
+        { "name": "r", "types": ["int"] },
+        { "name": "g", "types": ["int"] },
+        { "name": "b", "types": ["int"] },
+        { "name": "bZTest", "types": ["bool"] },
+        { "name": "flDuration", "types": ["float"] }
+      ]
+    },
+    {
+      "name": "DebugDrawCircle",
+      "description": "Draws a debug circle in the world.",
+      "args": [
+        { "name": "vCenter", "types": ["Vector"] },
+        { "name": "flRadius", "types": ["float"] },
+        { "name": "r", "types": ["int"] },
+        { "name": "g", "types": ["int"] },
+        { "name": "b", "types": ["int"] },
+        { "name": "bZTest", "types": ["bool"] },
+        { "name": "flDuration", "types": ["float"] }
+      ]
+    },
+    {
+      "name": "DebugDrawText",
+      "description": "Draws debug text in the world.",
+      "args": [
+        { "name": "vOrigin", "types": ["Vector"] },
+        { "name": "sText", "types": ["string"] },
+        { "name": "bViewCheck", "types": ["bool"] },
+        { "name": "flDuration", "types": ["float"] }
+      ]
+    }
+  ],
+  "unitMethods": [
+    { "name": "Action_ClearActions", "description": "Clears all queued and current actions.", "args": [{ "name": "bStop", "types": ["bool"] }] },
+    { "name": "Action_MoveToLocation", "description": "Moves the unit to the given location.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionPush_MoveToLocation", "description": "Pushes a move-to-location action onto the action queue.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionQueue_MoveToLocation", "description": "Queues a move-to-location action.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "Action_MoveDirectly", "description": "Moves the unit directly to the given location, ignoring pathing.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionPush_MoveDirectly", "description": "Pushes a move-directly action onto the action queue.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionQueue_MoveDirectly", "description": "Queues a move-directly action.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "Action_MovePath", "description": "Moves the unit along the given path.", "args": [{ "name": "tPath", "types": ["table"] }] },
+    { "name": "ActionPush_MovePath", "description": "Pushes a move-path action onto the action queue.", "args": [{ "name": "tPath", "types": ["table"] }] },
+    { "name": "ActionQueue_MovePath", "description": "Queues a move-path action.", "args": [{ "name": "tPath", "types": ["table"] }] },
+    { "name": "Action_MoveToUnit", "description": "Moves the unit to follow the given target unit.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionPush_MoveToUnit", "description": "Pushes a move-to-unit action onto the action queue.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionQueue_MoveToUnit", "description": "Queues a move-to-unit action.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "Action_AttackUnit", "description": "Attacks the given unit.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }, { "name": "bOnce", "types": ["bool"] }] },
+    { "name": "ActionPush_AttackUnit", "description": "Pushes an attack-unit action onto the action queue.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }, { "name": "bOnce", "types": ["bool"] }] },
+    { "name": "ActionQueue_AttackUnit", "description": "Queues an attack-unit action.", "args": [{ "name": "hUnit", "types": ["CDOTA_BaseNPC"] }, { "name": "bOnce", "types": ["bool"] }] },
+    { "name": "Action_AttackMove", "description": "Attack-moves to the given location.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionPush_AttackMove", "description": "Pushes an attack-move action onto the action queue.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionQueue_AttackMove", "description": "Queues an attack-move action.", "args": [{ "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "Action_UseAbility", "description": "Uses the given ability (no-target).", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionPush_UseAbility", "description": "Pushes a use-ability action onto the action queue.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionQueue_UseAbility", "description": "Queues a use-ability action.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }] },
+    { "name": "Action_UseAbilityOnEntity", "description": "Uses the given ability on the given target unit.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "hTarget", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionPush_UseAbilityOnEntity", "description": "Pushes a use-ability-on-entity action onto the action queue.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "hTarget", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionQueue_UseAbilityOnEntity", "description": "Queues a use-ability-on-entity action.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "hTarget", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "Action_UseAbilityOnLocation", "description": "Uses the given ability at the given location.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionPush_UseAbilityOnLocation", "description": "Pushes a use-ability-on-location action onto the action queue.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionQueue_UseAbilityOnLocation", "description": "Queues a use-ability-on-location action.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "Action_UseAbilityOnTree", "description": "Uses the given ability on the given tree.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "nTreeID", "types": ["int"] }] },
+    { "name": "ActionPush_UseAbilityOnTree", "description": "Pushes a use-ability-on-tree action onto the action queue.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "nTreeID", "types": ["int"] }] },
+    { "name": "ActionQueue_UseAbilityOnTree", "description": "Queues a use-ability-on-tree action.", "args": [{ "name": "hAbility", "types": ["CDOTABaseAbility"] }, { "name": "nTreeID", "types": ["int"] }] },
+    { "name": "Action_PickUpRune", "description": "Picks up the rune at the given rune location index.", "args": [{ "name": "nRune", "types": ["int"] }] },
+    { "name": "ActionPush_PickUpRune", "description": "Pushes a pick-up-rune action onto the action queue.", "args": [{ "name": "nRune", "types": ["int"] }] },
+    { "name": "ActionQueue_PickUpRune", "description": "Queues a pick-up-rune action.", "args": [{ "name": "nRune", "types": ["int"] }] },
+    { "name": "Action_PickUpItem", "description": "Picks up the given dropped item.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionPush_PickUpItem", "description": "Pushes a pick-up-item action onto the action queue.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionQueue_PickUpItem", "description": "Queues a pick-up-item action.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }] },
+    { "name": "Action_DropItem", "description": "Drops the item in the given slot at the given location.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionPush_DropItem", "description": "Pushes a drop-item action onto the action queue.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "ActionQueue_DropItem", "description": "Queues a drop-item action.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }, { "name": "vLocation", "types": ["Vector"] }] },
+    { "name": "Action_UseShrine", "description": "Uses the given shrine.", "args": [{ "name": "hShrine", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionPush_UseShrine", "description": "Pushes a use-shrine action onto the action queue.", "args": [{ "name": "hShrine", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "ActionQueue_UseShrine", "description": "Queues a use-shrine action.", "args": [{ "name": "hShrine", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "Action_Delay", "description": "Delays the next action by the given number of seconds.", "args": [{ "name": "flSeconds", "types": ["float"] }] },
+    { "name": "ActionPush_Delay", "description": "Pushes a delay action onto the action queue.", "args": [{ "name": "flSeconds", "types": ["float"] }] },
+    { "name": "ActionQueue_Delay", "description": "Queues a delay action.", "args": [{ "name": "flSeconds", "types": ["float"] }] },
+    { "name": "ActionImmediate_PurchaseItem", "description": "Immediately purchases the given item.", "args": [{ "name": "sItemName", "types": ["string"] }], "returns": ["int"] },
+    { "name": "ActionImmediate_SellItem", "description": "Immediately sells the given item.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionImmediate_DisassembleItem", "description": "Immediately disassembles the given item.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }] },
+    { "name": "ActionImmediate_SetItemCombineLock", "description": "Sets the combine lock on the given item.", "args": [{ "name": "hItem", "types": ["CDOTABaseAbility"] }, { "name": "bLocked", "types": ["bool"] }] },
+    { "name": "ActionImmediate_SwapItems", "description": "Immediately swaps two items in the given slots.", "args": [{ "name": "nSlot1", "types": ["int"] }, { "name": "nSlot2", "types": ["int"] }] },
+    { "name": "ActionImmediate_Courier", "description": "Sends the given courier action.", "args": [{ "name": "hCourier", "types": ["hCourier"] }, { "name": "nAction", "types": ["int"] }] },
+    { "name": "ActionImmediate_Buyback", "description": "Immediately buys back the bot." , "args": [] },
+    { "name": "ActionImmediate_Glyph", "description": "Immediately uses the glyph.", "args": [] },
+    { "name": "ActionImmediate_LevelAbility", "description": "Immediately levels up the given ability.", "args": [{ "name": "sAbilityName", "types": ["string"] }] },
+    { "name": "ActionImmediate_Chat", "description": "Sends a chat message.", "args": [{ "name": "sMessage", "types": ["string"] }, { "name": "bAllChat", "types": ["bool"] }] },
+    { "name": "ActionImmediate_Ping", "description": "Pings the given location.", "args": [{ "name": "vLocation", "types": ["Vector"] }, { "name": "bNormalPing", "types": ["bool"] }] },
+    { "name": "GetCurrentActionType", "description": "Returns the type of the current action.", "args": [], "returns": ["int"] },
+    { "name": "NumQueuedActions", "description": "Returns the number of actions in the action queue.", "args": [], "returns": ["int"] },
+    { "name": "GetQueuedActionType", "description": "Returns the type of the action at the given queue index.", "args": [{ "name": "nIndex", "types": ["int"] }], "returns": ["int"] },
+    { "name": "IsBot", "description": "Returns whether this unit is a bot.", "args": [], "returns": ["bool"] },
+    { "name": "GetDifficulty", "description": "Returns the difficulty level of this bot.", "args": [], "returns": ["int"] },
+    { "name": "GetUnitName", "description": "Returns the unit name of this unit.", "args": [], "returns": ["string"] },
+    { "name": "GetPlayerID", "description": "Returns the player ID of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetTeam", "description": "Returns the team of this unit.", "args": [], "returns": ["int"] },
+    { "name": "IsHero", "description": "Returns whether this unit is a hero.", "args": [], "returns": ["bool"] },
+    { "name": "IsIllusion", "description": "Returns whether this unit is an illusion.", "args": [], "returns": ["bool"] },
+    { "name": "IsCreep", "description": "Returns whether this unit is a creep.", "args": [], "returns": ["bool"] },
+    { "name": "IsAncientCreep", "description": "Returns whether this unit is an ancient creep.", "args": [], "returns": ["bool"] },
+    { "name": "IsBuilding", "description": "Returns whether this unit is a building.", "args": [], "returns": ["bool"] },
+    { "name": "IsTower", "description": "Returns whether this unit is a tower.", "args": [], "returns": ["bool"] },
+    { "name": "IsFort", "description": "Returns whether this unit is a fort (ancient).", "args": [], "returns": ["bool"] },
+    { "name": "CanBeSeen", "description": "Returns whether this unit can currently be seen by the bot's team.", "args": [], "returns": ["bool"] },
+    { "name": "GetActiveMode", "description": "Returns the currently active bot mode.", "args": [], "returns": ["int"] },
+    { "name": "GetActiveModeDesire", "description": "Returns the desire of the currently active bot mode.", "args": [], "returns": ["float"] },
+    { "name": "GetHealth", "description": "Returns the current health of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetMaxHealth", "description": "Returns the maximum health of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetHealthRegen", "description": "Returns the health regeneration of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetMana", "description": "Returns the current mana of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetMaxMana", "description": "Returns the maximum mana of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetManaRegen", "description": "Returns the mana regeneration of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetBaseMovementSpeed", "description": "Returns the base movement speed of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetCurrentMovementSpeed", "description": "Returns the current movement speed of this unit.", "args": [], "returns": ["int"] },
+    { "name": "IsAlive", "description": "Returns whether this unit is alive.", "args": [], "returns": ["bool"] },
+    { "name": "GetRespawnTime", "description": "Returns the time until this unit respawns.", "args": [], "returns": ["float"] },
+    { "name": "HasBuyback", "description": "Returns whether this hero has a buyback available.", "args": [], "returns": ["bool"] },
+    { "name": "GetBuybackCost", "description": "Returns the gold cost to buyback.", "args": [], "returns": ["int"] },
+    { "name": "GetBuybackCooldown", "description": "Returns the remaining buyback cooldown.", "args": [], "returns": ["float"] },
+    { "name": "GetRemainingLifespan", "description": "Returns the remaining lifespan of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetBaseDamage", "description": "Returns the base damage of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetBaseDamageVariance", "description": "Returns the base damage variance of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetAttackDamage", "description": "Returns the total attack damage of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetAttackRange", "description": "Returns the attack range of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetAttackSpeed", "description": "Returns the attack speed of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetSecondsPerAttack", "description": "Returns the number of seconds between attacks.", "args": [], "returns": ["float"] },
+    { "name": "GetAttackPoint", "description": "Returns the attack point of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetLastAttackTime", "description": "Returns the game time of the last attack.", "args": [], "returns": ["float"] },
+    { "name": "GetAttackTarget", "description": "Returns the current attack target of this unit.", "args": [], "returns": ["CDOTA_BaseNPC"] },
+    { "name": "GetAcquisitionRange", "description": "Returns the acquisition range of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetAttackProjectileSpeed", "description": "Returns the attack projectile speed of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetActualIncomingDamage", "description": "Returns the actual incoming damage after reductions for the given raw damage and damage type.", "args": [{ "name": "flRawDamage", "types": ["float"] }, { "name": "nDamageType", "types": ["int"] }], "returns": ["float"] },
+    { "name": "GetAttackCombatProficiency", "description": "Returns the attack combat proficiency of this unit against the given target.", "args": [{ "name": "hTarget", "types": ["CDOTA_BaseNPC"] }], "returns": ["float"] },
+    { "name": "GetDefendCombatProficiency", "description": "Returns the defend combat proficiency of this unit against the given attacker.", "args": [{ "name": "hAttacker", "types": ["CDOTA_BaseNPC"] }], "returns": ["float"] },
+    { "name": "GetSpellAmp", "description": "Returns the spell amplification of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetArmor", "description": "Returns the armor of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetMagicResist", "description": "Returns the magic resistance of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetEvasion", "description": "Returns the evasion chance of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetPrimaryAttribute", "description": "Returns the primary attribute of this hero.", "args": [], "returns": ["int"] },
+    { "name": "GetAttributeValue", "description": "Returns the value of the given attribute.", "args": [{ "name": "nAttribute", "types": ["int"] }], "returns": ["int"] },
+    { "name": "GetBountyXP", "description": "Returns the XP bounty of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetBountyGoldMin", "description": "Returns the minimum gold bounty of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetBountyGoldMax", "description": "Returns the maximum gold bounty of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetXPNeededToLevel", "description": "Returns the XP needed to reach the next level.", "args": [], "returns": ["int"] },
+    { "name": "GetAbilityPoints", "description": "Returns the number of unspent ability points.", "args": [], "returns": ["int"] },
+    { "name": "GetLevel", "description": "Returns the level of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetGold", "description": "Returns the current gold of this hero.", "args": [], "returns": ["int"] },
+    { "name": "GetNetWorth", "description": "Returns the net worth of this hero.", "args": [], "returns": ["int"] },
+    { "name": "GetStashValue", "description": "Returns the total gold value of items in the stash.", "args": [], "returns": ["int"] },
+    { "name": "GetCourierValue", "description": "Returns the total gold value of items on the courier.", "args": [], "returns": ["int"] },
+    { "name": "GetLastHits", "description": "Returns the last hit count of this hero.", "args": [], "returns": ["int"] },
+    { "name": "GetDenies", "description": "Returns the deny count of this hero.", "args": [], "returns": ["int"] },
+    { "name": "GetBoundingRadius", "description": "Returns the bounding radius of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetLocation", "description": "Returns the world location of this unit.", "args": [], "returns": ["Vector"] },
+    { "name": "GetFacing", "description": "Returns the facing angle of this unit in degrees.", "args": [], "returns": ["float"] },
+    { "name": "IsFacingLocation", "description": "Returns whether this unit is facing the given location within the given tolerance.", "args": [{ "name": "vLocation", "types": ["Vector"] }, { "name": "flTolerance", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "GetGroundHeight", "description": "Returns the ground height at this unit's location.", "args": [], "returns": ["float"] },
+    { "name": "GetVelocity", "description": "Returns the current velocity vector of this unit.", "args": [], "returns": ["Vector"] },
+    { "name": "GetDayTimeVisionRange", "description": "Returns the daytime vision range of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetNightTimeVisionRange", "description": "Returns the nighttime vision range of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetCurrentVisionRange", "description": "Returns the current vision range of this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetHealthRegenPerStr", "description": "Returns the health regen per point of strength.", "args": [], "returns": ["float"] },
+    { "name": "GetManaRegenPerInt", "description": "Returns the mana regen per point of intellect.", "args": [], "returns": ["float"] },
+    { "name": "GetAnimActivity", "description": "Returns the current animation activity.", "args": [], "returns": ["int"] },
+    { "name": "GetAnimCycle", "description": "Returns the current animation cycle.", "args": [], "returns": ["float"] },
+    { "name": "GetAbilityByName", "description": "Returns the ability with the given name.", "args": [{ "name": "sAbilityName", "types": ["string"] }], "returns": ["CDOTABaseAbility"] },
+    { "name": "GetAbilityInSlot", "description": "Returns the ability in the given slot.", "args": [{ "name": "nSlot", "types": ["int"] }], "returns": ["CDOTABaseAbility"] },
+    { "name": "GetItemInSlot", "description": "Returns the item in the given slot.", "args": [{ "name": "nSlot", "types": ["int"] }], "returns": ["CDOTABaseAbility"] },
+    { "name": "FindItemSlot", "description": "Returns the slot index of the given item, or -1 if not found.", "args": [{ "name": "sItemName", "types": ["string"] }], "returns": ["int"] },
+    { "name": "GetItemSlotType", "description": "Returns the slot type for the given item slot index.", "args": [{ "name": "nSlot", "types": ["int"] }], "returns": ["int"] },
+    { "name": "IsChanneling", "description": "Returns whether this unit is currently channeling an ability.", "args": [], "returns": ["bool"] },
+    { "name": "IsUsingAbility", "description": "Returns whether this unit is currently using an ability.", "args": [], "returns": ["bool"] },
+    { "name": "IsCastingAbility", "description": "Returns whether this unit is currently in the cast animation of an ability.", "args": [], "returns": ["bool"] },
+    { "name": "GetCurrentActiveAbility", "description": "Returns the ability currently being cast or channeled.", "args": [], "returns": ["CDOTABaseAbility"] },
+    { "name": "IsAttackImmune", "description": "Returns whether this unit is immune to attacks.", "args": [], "returns": ["bool"] },
+    { "name": "IsBlind", "description": "Returns whether this unit is blinded.", "args": [], "returns": ["bool"] },
+    { "name": "IsBlockDisabled", "description": "Returns whether block is disabled on this unit.", "args": [], "returns": ["bool"] },
+    { "name": "IsDisarmed", "description": "Returns whether this unit is disarmed.", "args": [], "returns": ["bool"] },
+    { "name": "IsDominated", "description": "Returns whether this unit is dominated.", "args": [], "returns": ["bool"] },
+    { "name": "IsEvadeDisabled", "description": "Returns whether evasion is disabled on this unit.", "args": [], "returns": ["bool"] },
+    { "name": "IsHexed", "description": "Returns whether this unit is hexed.", "args": [], "returns": ["bool"] },
+    { "name": "IsInvisible", "description": "Returns whether this unit is invisible.", "args": [], "returns": ["bool"] },
+    { "name": "IsInvulnerable", "description": "Returns whether this unit is invulnerable.", "args": [], "returns": ["bool"] },
+    { "name": "IsMagicImmune", "description": "Returns whether this unit is magic immune.", "args": [], "returns": ["bool"] },
+    { "name": "IsMuted", "description": "Returns whether this unit is muted.", "args": [], "returns": ["bool"] },
+    { "name": "IsNightmared", "description": "Returns whether this unit is nightmared.", "args": [], "returns": ["bool"] },
+    { "name": "IsRooted", "description": "Returns whether this unit is rooted.", "args": [], "returns": ["bool"] },
+    { "name": "IsSilenced", "description": "Returns whether this unit is silenced.", "args": [], "returns": ["bool"] },
+    { "name": "IsSpeciallyDeniable", "description": "Returns whether this unit is specially deniable.", "args": [], "returns": ["bool"] },
+    { "name": "IsStunned", "description": "Returns whether this unit is stunned.", "args": [], "returns": ["bool"] },
+    { "name": "IsUnableToMiss", "description": "Returns whether this unit cannot miss attacks.", "args": [], "returns": ["bool"] },
+    { "name": "HasScepter", "description": "Returns whether this hero has Aghanim's Scepter.", "args": [], "returns": ["bool"] },
+    { "name": "WasRecentlyDamagedByAnyHero", "description": "Returns whether this unit was recently damaged by any hero.", "args": [{ "name": "fSeconds", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "TimeSinceDamagedByAnyHero", "description": "Returns the time in seconds since this unit was last damaged by any hero.", "args": [], "returns": ["float"] },
+    { "name": "WasRecentlyDamagedByHero", "description": "Returns whether this unit was recently damaged by the given hero.", "args": [{ "name": "hHero", "types": ["CDOTA_BaseNPC"] }, { "name": "flTime", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "TimeSinceDamagedByHero", "description": "Returns the time in seconds since this unit was last damaged by the given hero.", "args": [{ "name": "hHero", "types": ["CDOTA_BaseNPC"] }], "returns": ["float"] },
+    { "name": "WasRecentlyDamagedByPlayer", "description": "Returns whether this unit was recently damaged by the given player.", "args": [{ "name": "nPlayerID", "types": ["int"] }, { "name": "flTime", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "TimeSinceDamagedByPlayer", "description": "Returns the time in seconds since this unit was last damaged by the given player.", "args": [{ "name": "nPlayerID", "types": ["int"] }], "returns": ["float"] },
+    { "name": "WasRecentlyDamagedByCreep", "description": "Returns whether this unit was recently damaged by a creep.", "args": [{ "name": "fSeconds", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "TimeSinceDamagedByCreep", "description": "Returns the time in seconds since this unit was last damaged by a creep.", "args": [], "returns": ["float"] },
+    { "name": "WasRecentlyDamagedByTower", "description": "Returns whether this unit was recently damaged by a tower.", "args": [{ "name": "fSeconds", "types": ["float"] }], "returns": ["bool"] },
+    { "name": "TimeSinceDamagedByTower", "description": "Returns the time in seconds since this unit was last damaged by a tower.", "args": [], "returns": ["float"] },
+    { "name": "DistanceFromFountain", "description": "Returns the distance from this unit to the team fountain.", "args": [], "returns": ["float"] },
+    { "name": "DistanceFromSecretShop", "description": "Returns the distance from this unit to the nearest secret shop.", "args": [], "returns": ["float"] },
+    { "name": "DistanceFromSideShop", "description": "Returns the distance from this unit to the nearest side shop.", "args": [], "returns": ["float"] },
+    { "name": "SetTarget", "description": "Sets the target unit for this bot.", "args": [{ "name": "hTarget", "types": ["CDOTA_BaseNPC"] }] },
+    { "name": "GetTarget", "description": "Returns the current target unit of this bot.", "args": [], "returns": ["CDOTA_BaseNPC"] },
+    { "name": "SetNextItemPurchaseValue", "description": "Sets the gold value threshold for the next item purchase.", "args": [{ "name": "nValue", "types": ["int"] }] },
+    { "name": "GetNextItemPurchaseValue", "description": "Returns the gold value threshold for the next item purchase.", "args": [], "returns": ["int"] },
+    { "name": "GetAssignedLane", "description": "Returns the lane assigned to this bot.", "args": [], "returns": ["int"] },
+    { "name": "GetOffensivePower", "description": "Returns the offensive power of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetRawOffensivePower", "description": "Returns the raw offensive power of this unit.", "args": [], "returns": ["float"] },
+    { "name": "GetEstimatedDamageToTarget", "description": "Returns the estimated damage this unit would deal to the given target.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }, { "name": "hTarget", "types": ["CDOTA_BaseNPC"] }, { "name": "flDuration", "types": ["float"] }, { "name": "nDamageTypes", "types": ["int"] }], "returns": ["float"] },
+    { "name": "GetStunDuration", "description": "Returns the total stun duration this unit can apply.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["float"] },
+    { "name": "GetSlowDuration", "description": "Returns the total slow duration this unit can apply.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["float"] },
+    { "name": "HasBlink", "description": "Returns whether this unit has a blink ability.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["bool"] },
+    { "name": "HasMinistunOnAttack", "description": "Returns whether this unit has a ministun on attack.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["bool"] },
+    { "name": "HasSilence", "description": "Returns whether this unit has a silence ability.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["bool"] },
+    { "name": "HasInvisibility", "description": "Returns whether this unit has an invisibility ability.", "args": [{ "name": "bCurrentlyAvailable", "types": ["bool"] }], "returns": ["bool"] },
+    { "name": "UsingItemBreaksInvisibility", "description": "Returns whether using an item would break this unit's invisibility.", "args": [], "returns": ["bool"] },
+    { "name": "GetNearbyHeroes", "description": "Returns a table of nearby heroes.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }, { "name": "nFlag", "types": ["int"] }], "returns": ["table"] },
+    { "name": "GetNearbyCreeps", "description": "Returns a table of nearby creeps.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }], "returns": ["table"] },
+    { "name": "GetNearbyLaneCreeps", "description": "Returns a table of nearby lane creeps.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }], "returns": ["table"] },
+    { "name": "GetNearbyNeutralCreeps", "description": "Returns a table of nearby neutral creeps.", "args": [{ "name": "flRadius", "types": ["float"] }], "returns": ["table"] },
+    { "name": "GetNearbyTowers", "description": "Returns a table of nearby towers.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }], "returns": ["table"] },
+    { "name": "GetNearbyBarracks", "description": "Returns a table of nearby barracks.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }], "returns": ["table"] },
+    { "name": "GetNearbyShrines", "description": "Returns a table of nearby shrines.", "args": [{ "name": "flRadius", "types": ["float"] }, { "name": "bEnemies", "types": ["bool"] }], "returns": ["table"] },
+    { "name": "GetNearbyTrees", "description": "Returns a table of nearby tree IDs.", "args": [{ "name": "flRadius", "types": ["float"] }], "returns": ["table"] },
+    { "name": "FindAoELocation", "description": "Returns the best location to cast an AoE ability to hit the most units.", "args": [{ "name": "bEnemies", "types": ["bool"] }, { "name": "bHeroes", "types": ["bool"] }, { "name": "vOrigin", "types": ["Vector"] }, { "name": "flSearchRadius", "types": ["float"] }, { "name": "flAoERadius", "types": ["float"] }, { "name": "flMinDistance", "types": ["float"] }, { "name": "flMinValue", "types": ["float"] }], "returns": ["table"] },
+    { "name": "GetExtrapolatedLocation", "description": "Returns the extrapolated location of this unit after the given time.", "args": [{ "name": "flTime", "types": ["float"] }], "returns": ["Vector"] },
+    { "name": "GetMovementDirectionStability", "description": "Returns a value in [0, 1] indicating how stable the movement direction has been.", "args": [], "returns": ["float"] },
+    { "name": "HasModifier", "description": "Returns whether this unit has the given modifier.", "args": [{ "name": "sModifierName", "types": ["string"] }], "returns": ["bool"] },
+    { "name": "GetModifierByName", "description": "Returns the modifier with the given name.", "args": [{ "name": "sModifierName", "types": ["string"] }], "returns": ["table"] },
+    { "name": "NumModifiers", "description": "Returns the number of modifiers on this unit.", "args": [], "returns": ["int"] },
+    { "name": "GetModifierName", "description": "Returns the name of the modifier at the given index.", "args": [{ "name": "nIndex", "types": ["int"] }], "returns": ["string"] },
+    { "name": "GetModifierStackCount", "description": "Returns the stack count of the modifier at the given index.", "args": [{ "name": "nIndex", "types": ["int"] }], "returns": ["int"] },
+    { "name": "GetModifierRemainingDuration", "description": "Returns the remaining duration of the modifier at the given index.", "args": [{ "name": "nIndex", "types": ["int"] }], "returns": ["float"] },
+    { "name": "GetModifierAuxiliaryUnits", "description": "Returns a table of auxiliary units for the modifier at the given index.", "args": [{ "name": "nIndex", "types": ["int"] }], "returns": ["table"] },
+    { "name": "GetMostRecentPing", "description": "Returns information about the most recent ping from this player.", "args": [], "returns": ["table"] },
+    { "name": "GetIncomingTrackingProjectiles", "description": "Returns a table of tracking projectiles currently targeting this unit.", "args": [], "returns": ["table"] }
+  ],
+  "abilityMethods": [
+    { "name": "CanAbilityBeUpgraded", "description": "Returns whether this ability can be upgraded.", "args": [], "returns": ["bool"] },
+    { "name": "GetAbilityDamage", "description": "Returns the damage value of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetAutoCastState", "description": "Returns whether auto-cast is enabled for this ability.", "args": [], "returns": ["bool"] },
+    { "name": "GetBehavior", "description": "Returns the behavior bitfield of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetCaster", "description": "Returns the unit that owns this ability.", "args": [], "returns": ["CDOTA_BaseNPC"] },
+    { "name": "GetCastPoint", "description": "Returns the cast point of this ability.", "args": [], "returns": ["float"] },
+    { "name": "GetCastRange", "description": "Returns the cast range of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetChannelledManaCostPerSecond", "description": "Returns the mana cost per second while channeling.", "args": [], "returns": ["int"] },
+    { "name": "GetChannelTime", "description": "Returns the channel time of this ability.", "args": [], "returns": ["float"] },
+    { "name": "GetDuration", "description": "Returns the duration of this ability's effect.", "args": [], "returns": ["float"] },
+    { "name": "GetCooldownTimeRemaining", "description": "Returns the remaining cooldown time.", "args": [], "returns": ["float"] },
+    { "name": "GetCurrentCharges", "description": "Returns the current number of charges.", "args": [], "returns": ["int"] },
+    { "name": "GetDamageType", "description": "Returns the damage type of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetHeroLevelRequiredToUpgrade", "description": "Returns the hero level required to upgrade this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetInitialCharges", "description": "Returns the initial number of charges.", "args": [], "returns": ["int"] },
+    { "name": "GetLevel", "description": "Returns the current level of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetManaCost", "description": "Returns the mana cost of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetCooldown", "description": "Returns the cooldown of this ability at its current level.", "args": [], "returns": ["float"] },
+    { "name": "GetMaxLevel", "description": "Returns the maximum level of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetName", "description": "Returns the name of this ability.", "args": [], "returns": ["string"] },
+    { "name": "GetSecondaryCharges", "description": "Returns the secondary charge count of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetSpecialValueFloat", "description": "Returns the float value of the given special value key at the current level.", "args": [{ "name": "sKey", "types": ["string"] }], "returns": ["float"] },
+    { "name": "GetSpecialValueInt", "description": "Returns the integer value of the given special value key at the current level.", "args": [{ "name": "sKey", "types": ["string"] }], "returns": ["int"] },
+    { "name": "GetTargetFlags", "description": "Returns the target flags bitfield of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetTargetTeam", "description": "Returns the target team of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetTargetType", "description": "Returns the target type of this ability.", "args": [], "returns": ["int"] },
+    { "name": "GetToggleState", "description": "Returns whether this toggle ability is currently active.", "args": [], "returns": ["bool"] },
+    { "name": "IsActivated", "description": "Returns whether this ability is activated.", "args": [], "returns": ["bool"] },
+    { "name": "IsAttributeBonus", "description": "Returns whether this ability is an attribute bonus.", "args": [], "returns": ["bool"] },
+    { "name": "IsChanneling", "description": "Returns whether this ability is currently being channeled.", "args": [], "returns": ["bool"] },
+    { "name": "IsCooldownReady", "description": "Returns whether this ability is off cooldown.", "args": [], "returns": ["bool"] },
+    { "name": "IsFullyCastable", "description": "Returns whether this ability is off cooldown and the owner has enough mana.", "args": [], "returns": ["bool"] },
+    { "name": "IsHidden", "description": "Returns whether this ability is hidden.", "args": [], "returns": ["bool"] },
+    { "name": "IsInAbilityPhase", "description": "Returns whether this ability is currently in its cast animation phase.", "args": [], "returns": ["bool"] },
+    { "name": "IsItem", "description": "Returns whether this ability is an item.", "args": [], "returns": ["bool"] },
+    { "name": "IsOwnersManaEnough", "description": "Returns whether the owner has enough mana to cast this ability.", "args": [], "returns": ["bool"] },
+    { "name": "IsPassive", "description": "Returns whether this ability is passive.", "args": [], "returns": ["bool"] },
+    { "name": "IsStealable", "description": "Returns whether this ability can be stolen.", "args": [], "returns": ["bool"] },
+    { "name": "IsStolen", "description": "Returns whether this ability has been stolen.", "args": [], "returns": ["bool"] },
+    { "name": "IsToggle", "description": "Returns whether this ability is a toggle.", "args": [], "returns": ["bool"] },
+    { "name": "IsTrained", "description": "Returns whether this ability has been leveled at least once.", "args": [], "returns": ["bool"] },
+    { "name": "ProcsMagicStick", "description": "Returns whether this ability procs magic stick.", "args": [], "returns": ["bool"] },
+    { "name": "ToggleAutoCast", "description": "Toggles the auto-cast state of this ability.", "args": [] },
+    { "name": "CanBeDisassembled", "description": "Returns whether this item can be disassembled.", "args": [], "returns": ["bool"] },
+    { "name": "IsCombineLocked", "description": "Returns whether this item's combine is locked.", "args": [], "returns": ["bool"] }
+  ]
+}
