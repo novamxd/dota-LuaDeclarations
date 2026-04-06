@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/novamxd/dota-LuaDeclarations"
+    "url": "git+https://github.com/novamxd/dota-LuaDeclarations.git"
   },
   "homepage": "https://github.com/novamxd/dota-LuaDeclarations",
   "keywords": [
